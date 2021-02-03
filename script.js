@@ -62,6 +62,10 @@ function verifyPin() {
         const incorrect = document.getElementById('incorrect-pin');
         incorrect.style.display = "block";*/
         displayMatchResult("none", "block");
+        let count = Number(document.getElementById('try-count').textContent) - 1;
+        if (count > 0 || count == 0) {
+            document.getElementById('try-count').textContent = count;
+        } 
     }
 }
 //display match result
