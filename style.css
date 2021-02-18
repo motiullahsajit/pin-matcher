@@ -50,18 +50,15 @@ input[type='text']:focus {
 .numbers {
     margin: 30px 0;
 }
-
 .calc-typed {
 margin-top: 20px;
 font-size: 45px;
 text-align: right;
 color: #fff;
 }
-
 .calc-button-row {
 width: 100%;
 }
-
 .button {
 width: 20%;
 background: #425062;
@@ -104,4 +101,13 @@ color: #E0B612;
 .action-left {
     color: #FF3C5F;
     margin-top: 10px;
+}
+#try-again{
+    display: none;
+}
+.btn-danger{
+    border: none;
+    margin-top: 20px;
+    padding: 10px 120px;
+    border-radius: 5px;
 }

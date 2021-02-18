@@ -12,7 +12,7 @@
 
 <body>
     <div class="container">
-        <div class="row">
+        <div id="generate-pin" class="row">
             <div class="col-md-6">
                 <div class="pin-generator half-width">
                     <input id="pin" class="form-control" type="text">
@@ -40,24 +40,36 @@
                                 <div class="button">3</div>
                             </div>
                             <div class="calc-button-row">
-                                        <div class="button"><</div>
-                                        <div class="button">0</div>
-                                        <div class="button">C</div>
-                                </div>
-                                <div>
-                                    <button onclick="verifyPin()" type="submit" class="submit-btn">Submit</button>
-                                    <p class="action-left"><span id="try-count">3</span> try left</p>
-                                </div>
+                                <div id="back-space" class="button">&larr;</div>
+                                <div class="button">0</div>
+                                <div class="button">C</div>
+                            </div>
+                            <div>
+                                <button onclick="verifyPin()" type="submit" class="submit-btn">Submit</button>
+                                <p class="action-left"><span id="try-count">3</span> try left</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="notify-section">
-                    <p id="incorrect-pin" class="notify">❌ Pin Didn't Match, Please try again</p>
-                    <p id="correct-pin" class="notify">✅ Pin Matched... Secret door is opening for you</p>
+            </div>
+            <div class="notify-section">
+                <p id="incorrect-pin" class="notify">❌ Pin Didn't Match, Please try again</p>
+                <p id="correct-pin" class="notify">✅ Pin Matched... Secret door is opening for you</p>
+            </div>
+        </div>
+
+        
+        <div id="try-again" class="container text-center mt-5">
+            <div class="row mt-5">
+                <div class="col-md-6 mx-auto">
+                    <div>
+                        <h1 class="display-1 mb-3 text-danger">Try Again</h1>
+                        <a href="index.html"><button class="btn-danger">Generate Pin Again</button></a>
+                    </div>
                 </div>
             </div>
-            <script src="script.js"></script>
+        </div>
+        <script src="script.js"></script>
 </body>
 
 </html>

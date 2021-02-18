@@ -32,10 +32,6 @@ buttonContainer.addEventListener('click', function (event) {
             const typedInput = document.getElementById('typed-pin');
             typedInput.value = '';
         }
-        if (digit === '<') {
-            const typedInput = document.getElementById('typed-pin');
-            typedInput.value = '';
-        }
     }
     else {
         const typedInput = document.getElementById('typed-pin');
@@ -45,27 +41,36 @@ buttonContainer.addEventListener('click', function (event) {
 
 //verify pin
 function verifyPin() {
-    const pin = document.getElementById('pin').value;
-    const typedPin = document.getElementById('typed-pin').value;
-    if (pin === typedPin) {
-        /*const correct = document.getElementById('correct-pin');
-        correct.style.display = "block";
-        const incorrect = document.getElementById('incorrect-pin');
-        incorrect.style.display = "none";*/
-        displayMatchResult("block", "none");
-        document.getElementById('pin').value = "";
-        document.getElementById('typed-pin').value = '';
+    if (document.getElementById('typed-pin').value == '' || document.getElementById('pin').value == '') {
+        alert('please type or generate your pin first');
     }
     else {
-        /*const correct = document.getElementById('correct-pin');
-        correct.style.display = "none";
-        const incorrect = document.getElementById('incorrect-pin');
-        incorrect.style.display = "block";*/
-        displayMatchResult("none", "block");
-        let count = Number(document.getElementById('try-count').textContent) - 1;
-        if (count > 0 || count == 0) {
-            document.getElementById('try-count').textContent = count;
-        } 
+        const pin = document.getElementById('pin').value;
+        const typedPin = document.getElementById('typed-pin').value;
+        if (pin === typedPin) {
+            /*const correct = document.getElementById('correct-pin');
+            correct.style.display = "block";
+            const incorrect = document.getElementById('incorrect-pin');
+            incorrect.style.display = "none";*/
+            displayMatchResult("block", "none");
+            document.getElementById('pin').value = "";
+            document.getElementById('typed-pin').value = '';
+        }
+        else {
+            /*const correct = document.getElementById('correct-pin');
+            correct.style.display = "none";
+            const incorrect = document.getElementById('incorrect-pin');
+            incorrect.style.display = "block";*/
+            displayMatchResult("none", "block");
+            let count = Number(document.getElementById('try-count').textContent) - 1;
+            if (count >= 1) {
+                document.getElementById('try-count').textContent = count;
+            }
+            else {
+                document.getElementById('try-again').style.display = 'block';
+                document.getElementById('generate-pin').style.display = 'none';
+            }
+        }
     }
 }
 //display match result
@@ -75,3 +80,9 @@ function displayMatchResult(correctStatus, incorrectStatus) {
     const incorrect = document.getElementById('incorrect-pin');
     incorrect.style.display = incorrectStatus;
 }
+
+//backspace
+const backSpace = document.getElementById('back-space').addEventListener('click', function () {
+    const currentInput = document.getElementById('typed-pin').value;
+    document.getElementById('typed-pin').value = currentInput.substr(0, currentInput.length - 1);
+})
