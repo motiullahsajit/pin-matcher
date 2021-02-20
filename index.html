@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-5">
         <div id="generate-pin" class="row">
             <div class="col-md-6">
                 <div class="pin-generator half-width">
@@ -45,7 +45,7 @@
                                 <div class="button">C</div>
                             </div>
                             <div>
-                                <button onclick="verifyPin()" type="submit" class="submit-btn">Submit</button>
+                                <button onclick="verifyPin()" type="submit" class="btn submit-btn">Submit</button>
                                 <p class="action-left"><span id="try-count">3</span> try left</p>
                             </div>
                         </div>
@@ -59,12 +59,12 @@
         </div>
 
         
-        <div id="try-again" class="container text-center mt-5">
-            <div class="row mt-5">
-                <div class="col-md-6 mx-auto">
+        <div id="try-again" class="container text-center">
+            <div class="row">
+                <div class="col-md-7 mx-auto">
                     <div>
-                        <h1 class="display-1 mb-3 text-danger">Try Again</h1>
-                        <a href="index.html"><button class="btn-danger">Generate Pin Again</button></a>
+                        <h1 class="display-1 mb-3 text-danger">NO Try Left !!</h1>
+                        <a href="index.html"><button class="btn-danger  px-5 py-2 ">Generate Pin Again</button></a>
                     </div>
                 </div>
             </div>

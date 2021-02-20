@@ -5,10 +5,6 @@ body {
     background: #10101B;
     height: 100vh;
 }
-.container {
-    margin-top: 30px;
-}
-
 .half-width {
     height: 570px;
     background: #222436;
@@ -31,7 +27,6 @@ body {
     outline: none;
     box-shadow: none;
 }
-
 input[type='text']{
     background-color: #3D4153;
     padding: 10px 0px;
@@ -76,14 +71,6 @@ cursor: pointer;
 .blink-me {
 color: #E0B612;
 }
-.submit-btn {
-    border: none;
-    margin-top: 20px;
-    padding: 10px 120px;
-    border-radius: 5px;
-    background: #495BC3;
-    color: #fff;
-}
 .notify {
     color: #fff;
     text-align: center;
@@ -104,10 +91,19 @@ color: #E0B612;
 }
 #try-again{
     display: none;
+    margin-top: 15rem;
 }
 .btn-danger{
     border: none;
     margin-top: 20px;
-    padding: 10px 120px;
     border-radius: 5px;
 }
+.submit-btn {
+    background: #495BC3;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 3% 26%;
+    margin-top: 20px;
+    border-radius: 5px;
+} 
