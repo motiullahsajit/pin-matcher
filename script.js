@@ -1,3 +1,4 @@
+//genarating pin
 function getPin() {
     const random = Math.round(Math.random() * 10000);
     const pin = (random + '');
@@ -14,11 +15,13 @@ function generatePin() {
     const pinInput = document.getElementById('pin');
     pinInput.value = getPin();
 }
+
 //handle calculator button event
 const buttonContainer = document.getElementById('digit-container');
 buttonContainer.addEventListener('click', function (event) {
     const digit = event.target.innerText;
     if (isNaN(digit)) {
+        //handle clear
         if (digit === 'C') {
             const typedInput = document.getElementById('typed-pin');
             typedInput.value = '';
@@ -56,6 +59,7 @@ function verifyPin() {
         }
     }
 }
+
 //display match result
 function displayMatchResult(correctStatus, incorrectStatus) {
     const correct = document.getElementById('correct-pin');
